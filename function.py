@@ -29,3 +29,8 @@ print("Welcome to the square program!")
 # Call the square function and print the result
 result = square(a)
 print(f"Hello {name}, the square of {a} is {result}.")
+
+#lambda function that returns the square of a number
+square = lambda a: (a ** 2)
+# Call the lambda function and print the result
+result = square(a)

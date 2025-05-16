@@ -29,3 +29,13 @@ def full_name(string1, string2):
 # Call the function and print the result
 result = full_name(string1, string2)
 print(f"Hello {result}, welcome to the program!")
+
+
+#lambda function
+full_name = lambda fname, lname: fname + " " + lname
+# Get user input
+fname = input("Enter your first name: ").title()
+lname = input("Enter your last name: ").title()
+# Call the lambda function and print the result
+result = full_name(fname, lname)
+print(f"Hello {result}, welcome to the program that uses lambda function!")
