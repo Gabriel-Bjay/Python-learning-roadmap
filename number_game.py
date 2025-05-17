@@ -27,13 +27,17 @@ if decision == "yes":
             elif user_input > secret_number:
                 print("Your guess is too high.")
             else:
-                print(f"You guessed the number correctly after {attempts} attempt(s). Congratulations!")
+                print(
+                    f"You guessed the number correctly after {attempts} attempt(s). "
+                    "Congratulations!"
+                )
                 break
         except ValueError:
             print("Please enter a valid number.")
 
     if attempts == guess_limit and user_input != secret_number:
-        print(f"Sorry, you've used all your attempts. The correct number was {secret_number}.")
+        print("Sorry, you've used all your attempts.")
+        print(f"The correct number was {secret_number}.")
 
 #  Exit message only if player said no
 else:
