@@ -1,4 +1,4 @@
-# Initialize an empty dictionary to store contacts
+# Initialize a dictionary to store contacts
 contacts = dict(
     Allan=dict(Contact="0711477823"),
     Bob=dict(Contact="0700477823"),
@@ -17,8 +17,10 @@ def add_contact(contacts):
     Prompts the user for the contact's name and phone number.
     Checks if the contact already exists in the phonebook.
     """
+    # Prompt for contact name and phone number
     name = input("Enter the contact's name: ").capitalize().strip()
     phone_number = input("Enter the contact's phone number: ")
+
     # Check if the contact already exists
     if name in contacts:
         print(f"Contact {name} already exists with number {contacts[name]}.")
@@ -27,6 +29,19 @@ def add_contact(contacts):
         contacts[name] = dict(Contact=phone_number)
         print(f"Contact {name} added with number {phone_number}.")
     return contacts
+
+
+def find_contact_key(name, contacts):
+    """
+    Helper to find the actual dictionary key (original casing)
+    for a contact by doing case-insensitive matching.
+    Returns the key or None if not found.
+    """
+    lower_name = name.lower()
+    for key in contacts:
+        if key.lower() == lower_name:
+            return key
+    return None
 
 
 def search_contact(contacts):
@@ -64,16 +79,3 @@ def view_contacts(contacts):
 
 
 view_contacts(contacts)
-
-
-def find_contact_key(name, contacts):
-    """
-    Helper to find the actual dictionary key (original casing)
-    for a contact by doing case-insensitive matching.
-    Returns the key or None if not found.
-    """
-    lower_name = name.lower()
-    for key in contacts:
-        if key.lower() == lower_name:
-            return key
-    return None

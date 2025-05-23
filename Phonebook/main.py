@@ -14,7 +14,7 @@ from tasks import (
 def main():
     print("Hello! Welcome to the Phonebook App.")
     print("You can add, delete, and view contacts.")
-    print("Options:")
+    print("\n --- Options: ---")
     print("1. View Contacts")
     print("2. Add Contact")
     print("3. Delete Contact")
@@ -23,13 +23,13 @@ def main():
 
     # User input loop
     while True:
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-5): ")
         if choice == '1':
-            add_contact(contacts)
-        elif choice == '2':
-            delete_contact(contacts)
-        elif choice == '3':
             view_contacts(contacts)
+        elif choice == '2':
+            add_contact(contacts)
+        elif choice == '3':
+            delete_contact(contacts)
         elif choice == '4':
             search_contact(contacts)
         elif choice == '5':
